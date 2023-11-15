@@ -8,5 +8,10 @@ jobs:
     container:
       image: debian:11
     steps:
-      - name: Check for dockerenv file
-        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+      - name: Setup MATLAB
+        uses: matlab-actions/setup-matlab@v1.2.5
+      - name: Run MATLAB Command
+        uses: matlab-actions/run-command@v1.2.2
+        with:
+          command: disp('hello')
+          
