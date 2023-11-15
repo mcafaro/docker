@@ -6,9 +6,9 @@ jobs:
   container-test-job:
     runs-on: ubuntu-latest
     container:
-      image: debian:11
+      image: ubuntu:22.04
     steps:
-      - run: apt update && apt install sudo
+      # - run: apt update && apt install sudo
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v1.2.5
       - name: Run MATLAB Command
